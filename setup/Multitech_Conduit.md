@@ -263,6 +263,18 @@ start-stop-daemon --start --background --make-pidfile \
 ```
 9. Restart the lora-network server: `/etc/init.d/lora-network-server restart`
 
-10. You can check the log of the package forwareder by `tail /var/log/lora-pkt-fwd-1.log` (note the `-1` in there).
+10. You can check the log of the package forwarder by `tail /var/log/lora-pkt-fwd-1.log` (note the `-1` in there). It should show something like:
+```
+INFO: Description configured to "Akvo LoRa gateway (hurdegaryp)"
+INFO: Successfully contacted server 80.83.53.26
+INFO: Successfully contacted server 54.72.145.119
+INFO: [main] Starting the concentrator
+INFO: [main] concentrator started, radio packets can now be received.
+INFO: [down] Thread activated for all server 54.72.145.119
+INFO: [down] Thread activated for all server 80.83.53.26
+INFO: [up] Thread activated for all servers.
+INFO: [down] for server 80.83.53.26 PULL_ACK received in 30 ms
+INFO: [down] for server 54.72.145.119 PULL_ACK received in 32 ms
+```
 
 11. Go to http://thethingsnetwork.org/api/v0/gateways/, and search for your gateway ID. If all is well, it should be there!
