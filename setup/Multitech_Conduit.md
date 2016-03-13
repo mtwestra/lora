@@ -201,7 +201,7 @@ mv /var/config/lora/global_conf.json-opkg /var/config/lora/global_conf.json
 7. Create file `/var/config/lora/local_conf.json`, and put this content in it:
 ```
   {
-  / Put there parameters that are different for each gateway (eg. pointing one gateway to a test server while the others stay in production) /
+  / Put here parameters that are specific for a gateway /
   / Settings defined in global_conf will be overwritten by those in local_conf /
       "gateway_conf": {
       / you must pick a unique 64b number for each gateway (represented by an hex string) /
@@ -219,6 +219,7 @@ mv /var/config/lora/global_conf.json-opkg /var/config/lora/global_conf.json
   }
 ```
 
+The contents of this local_conf.json file will overwrite those in global_conf.
 You need to change the following:
 
   * gateway_ID can be obtained by running `mts-io-sysfs show lora/eui`
